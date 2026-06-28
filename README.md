@@ -217,12 +217,12 @@ This project was written by a human. AI was used as a tool, not a ghostwriter. S
 
 ```mermaid
 xychart-beta horizontal
-    x-axis ["Fully AI", "", "", "", "", "", "", "", "", "Fully human"]
-    y-axis "%" 0 --> 100
+    x-axis [AI, ., ., ., ., ., ., ., ., Human]
+    y-axis 0 --> 100
     bar [0, 0, 0, 0, 0, 0, 0, 0, 0, 65]
 ```
 
-> 👤 Human **65%** — 🤖 AI **35%** 
+> 👤 Human **65%** — 🤖 AI **35%**
 
 > This table exists because AI involvement in software projects exists on a spectrum, and that spectrum deserves to be visible. ✅ = involved · ⬜ = not involved.
 
