@@ -8,13 +8,13 @@ A full-featured blog application with user authentication, profile management, a
 [![Django](https://img.shields.io/badge/Django-6.0.6-092E20?style=for-the-badge&logo=django&logoColor=white)](https://djangoproject.com)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-4-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 [![uv](https://img.shields.io/badge/uv-package_manager-DE5FE9?style=for-the-badge&logo=astral&logoColor=white)](https://github.com/astral-sh/uv)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-Unlicense-blue?style=for-the-badge)](LICENSE)
 [![Code Style](https://img.shields.io/badge/code_style-black-000000?style=for-the-badge)](https://github.com/psf/black)
 
 <br/>
 
 > ⚠️ **Screenshot coming soon** — add one here once the app is styled up!
-> 
+>
 > `![App Screenshot](docs/screenshot.png)`
 
 </div>
@@ -190,10 +190,44 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+This is free and unencumbered software released into the public domain. See [UNLICENSE](LICENSE) for more information.
+
+---
+
+## 🙏 Acknowledgements
+
+This project was built following [Corey Schafer's Django Tutorial](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) — one of the best free resources for learning Django from scratch. If you're just getting started with Django, go watch it.
+
+---
+
+## 🧑‍💻 Authorship
+
+This project was written by a human. AI was used as a tool, not a ghostwriter. See [AI.CONTRIB](AI.CONTRIB.md) for a full breakdown.
+
+| Category | 👤 Human | 🤖 AI |
+|---|---|---|
+| Code written | ✅ | ⬜ |
+| Code reviewed | ✅ | ✅ |
+| Bugs fixed | ✅ | ✅ |
+| Architecture / planning | ✅ | ⬜ |
+| Documentation | ✅ | ✅ |
+| Tests | ⬜ | ⬜ |
+
+**Authorship alignment** — human on the left, AI on the right:
+
+```mermaid
+xychart-beta horizontal
+    x-axis ["Fully AI", "", "", "", "", "", "", "", "", "Fully human"]
+    y-axis "%" 0 --> 100
+    bar [0, 0, 0, 0, 0, 0, 0, 0, 0, 65]
+```
+
+> 👤 Human **65%** — 🤖 AI **35%** 
+
+> This table exists because AI involvement in software projects exists on a spectrum, and that spectrum deserves to be visible. ✅ = involved · ⬜ = not involved.
 
 ---
 
 <div align="center">
-  <sub>Built with ❤️ using Django & Python</sub>
+  <sub>Built with ❤️ by <a href="https://github.com/Kalebm749">Kalebm749</a></sub>
 </div>
