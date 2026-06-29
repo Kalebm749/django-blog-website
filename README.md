@@ -213,17 +213,15 @@ This project was written by a human. AI was used as a tool, not a ghostwriter. S
 | Documentation | ✅ | ✅ |
 | Tests | ⬜ | ⬜ |
 
-**Authorship alignment** — human on the left, AI on the right:
+> 👤 Human **65%** — 🤖 AI **35%** · See [AI.CONTRIB.md](AI.CONTRIB.md) for the full breakdown.
 
-```mermaid
-xychart-beta horizontal
-    x-axis [AI, ., ., ., ., ., ., ., ., Human]
-    y-axis 0 --> 100
-    bar [0, 0, 0, 0, 0, 0, 0, 0, 0, 65]
+**Authorship alignment:**
+
 ```
-
-> 👤 Human **65%** — 🤖 AI **35%**
-
+👤 Human                                          🤖 AI
+├──────────────────────────────────┤──────────────────┤
+        65%  human-written                35%  AI-assisted
+```
 > This table exists because AI involvement in software projects exists on a spectrum, and that spectrum deserves to be visible. ✅ = involved · ⬜ = not involved.
 
 ---
