@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# DJANGO MEDIA
+django_blog/media/
