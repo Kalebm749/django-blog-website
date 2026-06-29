@@ -2,20 +2,17 @@
 
 # 📝 Django Blog Website
 
-A full-featured blog application with user authentication, profile management, and a clean Bootstrap 4 UI.
+A full-featured blog application built with Django featuring user authentication, profile management, and a clean Bootstrap 4 interface.
 
-[![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Django](https://img.shields.io/badge/Django-6.0.6-092E20?style=for-the-badge&logo=django&logoColor=white)](https://djangoproject.com)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-4-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
-[![uv](https://img.shields.io/badge/uv-package_manager-DE5FE9?style=for-the-badge&logo=astral&logoColor=white)](https://github.com/astral-sh/uv)
+[![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge\&logo=python\&logoColor=white)](https://python.org)
+[![Django](https://img.shields.io/badge/Django-6.0.6-092E20?style=for-the-badge\&logo=django\&logoColor=white)](https://djangoproject.com)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-4-7952B3?style=for-the-badge\&logo=bootstrap\&logoColor=white)](https://getbootstrap.com)
+[![uv](https://img.shields.io/badge/uv-package_manager-DE5FE9?style=for-the-badge\&logo=astral\&logoColor=white)](https://github.com/astral-sh/uv)
 [![License](https://img.shields.io/badge/License-Unlicense-blue?style=for-the-badge)](LICENSE)
-[![Code Style](https://img.shields.io/badge/code_style-black-000000?style=for-the-badge)](https://github.com/psf/black)
 
 <br/>
 
-> ⚠️ **Screenshot coming soon** — add one here once the app is styled up!
->
-> `![App Screenshot](docs/screenshot.png)`
+> **Screenshot coming soon.**
 
 </div>
 
@@ -23,12 +20,14 @@ A full-featured blog application with user authentication, profile management, a
 
 ## ✨ Features
 
-- 📰 **Blog feed** — list all posts with author, date, and content on the home page
-- 👤 **User registration** — custom sign-up form with email field built on Django's `UserCreationForm`
-- 🖼️ **User profiles** — each user gets a profile with an avatar image (powered by Pillow)
-- ✉️ **Flash messages** — success/error feedback on registration and form actions
-- 💅 **Crispy Forms** — Bootstrap 4 form rendering via `django-crispy-forms`
-- 🔐 **Django Admin** — manage posts, users, and profiles out of the box
+* User registration with a custom registration form
+* User authentication using Django's built-in authentication system
+* User profiles with avatar image uploads (Pillow)
+* Blog homepage with posts, author information, and timestamps
+* Bootstrap 4 responsive interface
+* Crispy Forms integration for clean form rendering
+* Django Admin for managing users, profiles, and blog content
+* SQLite development database
 
 ---
 
@@ -36,8 +35,8 @@ A full-featured blog application with user authentication, profile management, a
 
 ```mermaid
 erDiagram
-    User ||--o{ Post : "writes"
-    User ||--|| Profile : "has"
+    User ||--o{ Post : writes
+    User ||--|| Profile : has
 
     User {
         int id PK
@@ -65,43 +64,44 @@ erDiagram
 
 ## 🗺️ URL Routes
 
-| URL | View | Name |
-|-----|------|------|
-| `/` | `blog.views.home` | `blog-home` |
-| `/about/` | `blog.views.about` | `blog-about` |
-| `/register/` | `users.views.register` | `register` |
-| `/admin/` | Django Admin | — |
+| URL          | View                   | Name         |
+| ------------ | ---------------------- | ------------ |
+| `/`          | `blog.views.home`      | `blog-home`  |
+| `/about/`    | `blog.views.about`     | `blog-about` |
+| `/register/` | `users.views.register` | `register`   |
+| `/admin/`    | Django Admin           | —            |
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 django-blog-website/
-├── pyproject.toml          # Dependencies & project config
+├── blog/
+│   ├── migrations/
+│   ├── static/
+│   ├── templates/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+├── users/
+│   ├── migrations/
+│   ├── templates/
+│   ├── forms.py
+│   ├── models.py
+│   └── views.py
+├── django_blog/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+├── media/
+├── manage.py
+├── pyproject.toml
 ├── uv.lock
-└── django_blog/
-    ├── manage.py
-    ├── django_blog/        # Project settings & root URLs
-    │   ├── settings.py
-    │   └── urls.py
-    ├── blog/               # Blog app
-    │   ├── models.py       # Post model
-    │   ├── views.py
-    │   ├── urls.py
-    │   ├── admin.py
-    │   ├── templates/blog/
-    │   │   ├── base.html
-    │   │   ├── home.html
-    │   │   └── about.html
-    │   └── static/blog/
-    │       └── main.css
-    └── users/              # Auth & profiles app
-        ├── models.py       # Profile model
-        ├── views.py
-        ├── forms.py        # UserRegisterForm
-        └── templates/users/
-            └── register.html
+└── README.md
 ```
 
 ---
@@ -110,122 +110,119 @@ django-blog-website/
 
 ### Prerequisites
 
-- Python 3.14+
-- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+* Python 3.14+
+* [uv](https://docs.astral.sh/uv/getting-started/installation/)
 
 ### Installation
 
 ```bash
-# 1. Clone the repo
+# Clone the repository
 git clone https://github.com/Kalebm749/django-blog-website.git
 cd django-blog-website
 
-# 2. Install dependencies (uv handles the venv automatically)
+# Install dependencies
 uv sync
 
-# 3. Apply migrations
-uv run django_blog/manage.py migrate
+# Apply database migrations
+uv run manage.py migrate
 
-# 4. (Optional) Create an admin superuser
-uv run django_blog/manage.py createsuperuser
+# Create an administrator account (optional)
+uv run manage.py createsuperuser
 
-# 5. Start the dev server
-uv run django_blog/manage.py runserver
+# Start the development server
+uv run manage.py runserver
 ```
 
-Then visit 👉 **http://127.0.0.1:8000**
+Open your browser to:
+
+**http://127.0.0.1:8000**
 
 ---
 
 ## 🛠️ Development
 
+### Common Commands
+
 ```bash
-# Format Python with Black
-uv run black .
+# Start the development server
+uv run manage.py runserver
 
-# Format Django HTML templates with djlint
-uv run djlint django_blog --reformat --profile django
+# Create new migrations
+uv run manage.py makemigrations
 
-# Run type checking
-uv run mypy django_blog
+# Apply migrations
+uv run manage.py migrate
+
+# Run tests
+uv run manage.py test
+
+# Validate the project
+uv run manage.py check
+
+# Open the Django shell
+uv run manage.py shell
 ```
 
-### VS Code Setup
+### Formatting
 
-This project includes a `.vscode/settings.json` pre-configured with:
-- **djlint** as the Django HTML formatter (format on save)
-- **Black** as the Python formatter (format on save)
-- **Pylance** type checking set to `basic`
-- `django-html` language mode for all `.html` files
+Format Python code with Black:
 
-Recommended extensions: `batisteo.vscode-django`, `monosans.djlint`, `ms-python.black-formatter`
+```bash
+uv run black .
+```
+
+Format Django templates with djlint:
+
+```bash
+uv run djlint . --reformat --profile django
+```
 
 ---
 
 ## 📦 Dependencies
 
-| Package | Purpose |
-|---------|---------|
-| `django` | Web framework |
-| `django-crispy-forms` | Form rendering helpers |
-| `crispy-bootstrap4` | Bootstrap 4 template pack for crispy |
-| `pillow` | Image handling for user profile pictures |
-| `django-stubs` | Type stubs for Pylance/mypy |
-| `djlint` | Django template linter & formatter |
-| `black` *(dev)* | Python code formatter |
+| Package             | Purpose                                        |
+| ------------------- | ---------------------------------------------- |
+| Django              | Web framework                                  |
+| django-crispy-forms | Bootstrap-friendly form rendering              |
+| crispy-bootstrap4   | Bootstrap 4 template pack                      |
+| Pillow              | Image uploads for user profile pictures        |
+| Black               | Python formatter                               |
+| djlint              | Django template formatter and linter           |
+| django-stubs        | Type information for editors and type checkers |
 
 ---
 
 ## 🤝 Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+Contributions are welcome.
 
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/cool-thing`)
-3. Commit your changes (`git commit -m 'feat: add cool thing'`)
-4. Push to the branch (`git push origin feature/cool-thing`)
-5. Open a Pull Request
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes.
+4. Push your branch.
+5. Open a Pull Request.
 
 ---
 
 ## 📄 License
 
-This is free and unencumbered software released into the public domain. See [UNLICENSE](LICENSE) for more information.
+This project is released under the Unlicense. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🙏 Acknowledgements
 
-This project was built following [Corey Schafer's Django Tutorial](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) — one of the best free resources for learning Django from scratch. If you're just getting started with Django, go watch it.
+This project was built while following Corey Schafer's outstanding Django tutorial series, with additional features, refactoring, and continued development beyond the tutorial.
 
 ---
 
-## 🧑‍💻 Authorship
+## 🧑‍💻 AI Transparency
 
-This project was written by a human. AI was used as a tool, not a ghostwriter. See [AI.CONTRIB](AI.CONTRIB.md) for a full breakdown.
-
-| Category | 👤 Human | 🤖 AI |
-|---|---|---|
-| Code written | ✅ | ⬜ |
-| Code reviewed | ✅ | ✅ |
-| Bugs fixed | ✅ | ✅ |
-| Architecture / planning | ✅ | ⬜ |
-| Documentation | ✅ | ✅ |
-| Tests | ⬜ | ⬜ |
-
-> 👤 Human **65%** — 🤖 AI **35%** · See [AI.CONTRIB.md](AI.CONTRIB.md) for the full breakdown.
-
-**Authorship alignment:**
-
-```
-👤 Human                                          🤖 AI
-├──────────────────────────────────┤──────────────────┤
-        65%  human-written                35%  AI-assisted
-```
-> This table exists because AI involvement in software projects exists on a spectrum, and that spectrum deserves to be visible. ✅ = involved · ⬜ = not involved.
+This project is human-developed with AI used as an engineering assistant for documentation, reviews, brainstorming, debugging, and refactoring suggestions. Design decisions, implementation, and final code review remain human-directed.
 
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by <a href="https://github.com/Kalebm749">Kalebm749</a></sub>
+  <sub>Built by <a href="https://github.com/Kalebm749">Kaleb Moore</a></sub>
 </div>
